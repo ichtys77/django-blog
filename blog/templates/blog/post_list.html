@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>BLOG przedziwny</title>
 </head>
+
 <body>
   <div>
     <h1>Witam na stronie</h1>
@@ -11,18 +12,16 @@
     <h3>Autor: Łukasz Mazurkiewicz</h3>
     <h4>Wszelkie prawa zastrzeżone</h4>
   </div>
+  
+  {% for post in posts %}
   <div>
-    <p>Akapit</p>
-    <em>Tekst wyróżniony</em>
-    <strong>Tu jest pogrubiony tekst</strong>
-    <a href="https://www.pzlow.pl">LINK</a>
+    <p>opublikowany: {{ post.published_date }}</p>
+    <h2><a href="">{{ post.title }}</a></h2>
+    <em>{{ post.text|linebreaksbr }}</em>
   </div>
+  {% endfor %}
+  
   <div>
-    <ul>
-      <li>element listy</li>
-      <li>element listy</li>
-      <li>element listy</li>
-    </ul>
   </div>
 </body>
 </html>
